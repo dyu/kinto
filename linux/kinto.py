@@ -252,6 +252,12 @@ define_keymap(re.compile("^jetbrains-(?!.*toolbox).*$", re.IGNORECASE),{
     K("Super-c"): K("LC-c"),                    # Sigints - interrupt
 },"Jetbrains")
 
+# Keybindings for gedit 
+define_keymap(re.compile("gedit", re.IGNORECASE),{
+    K("Super-Page_Up"): K("C-Page_Up"),
+    K("Super-Page_Down"): K("C-Page_Down"),
+},"Overrides for Gedit - Editor")
+
 ##############################################
 ### START OF FILE MANAGER GROUP OF KEYMAPS ###
 ##############################################
@@ -299,6 +305,8 @@ define_keymap(re.compile("org.gnome.nautilus|nautilus", re.IGNORECASE),{
     K("RC-Super-o"): K("Shift-Enter"),          # Open in new window
     # K("RC-Super-o"): K("RC-Enter"),             # Open in new tab
     K("RC-comma"): K("RC-comma"),               # Overrides "Open preferences dialog" shortcut below
+    K("Super-Page_Up"): K("C-Page_Up"),
+    K("Super-Page_Down"): K("C-Page_Down"),
 },"Overrides for Nautilus - Finder")
 
 # Keybindings overrides for PCManFM and PCManFM-Qt
@@ -404,6 +412,8 @@ define_keymap(re.compile(browserStr, re.IGNORECASE),{
     K("RC-Key_9"): K("M-Key_9"),    # Jump to last tab
     K("C-Left_Brace"): K("C-Page_Up"),
     K("C-Right_Brace"): K("C-Page_Down"),
+    K("Super-Page_Up"): K("C-Page_Up"),
+    K("Super-Page_Down"): K("C-Page_Down"),
 })
 
 # Open preferences in browsers
@@ -542,6 +552,8 @@ define_keymap(re.compile(codeStr, re.IGNORECASE),{
     # K("C-PAGE_UP"): pass_through_key,           # cancel prev_view
     K("C-M-Left"): K("C-PAGE_UP"),              # next_view
     K("C-M-Right"): K("C-PAGE_DOWN"),           # prev_view
+    K("Super-Page_Up"): K("C-Page_Up"),
+    K("Super-Page_Down"): K("C-Page_Down"),
 
     # VS Code Shortcuts
     K("C-g"): pass_through_key,                 # cancel Go to Line...
