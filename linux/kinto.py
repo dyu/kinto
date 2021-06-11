@@ -256,6 +256,7 @@ define_keymap(re.compile("^jetbrains-(?!.*toolbox).*$", re.IGNORECASE),{
 define_keymap(re.compile("gedit", re.IGNORECASE),{
     K("Super-Page_Up"): K("C-Page_Up"),
     K("Super-Page_Down"): K("C-Page_Down"),
+    K("C-H"): K("LC-H"),
 },"Overrides for Gedit - Editor")
 
 ##############################################
