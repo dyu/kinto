@@ -54,6 +54,13 @@ sudo apt install python3
 PIP3_OPTS=--user ./setup.py
 ```
 
+
+### Overwrite settings
+```sh
+PIP3_OPTS=--user ./xkeysnail_service.sh
+```
+
+
 **Troubleshoot**
 
 If the wizard does not appear then either type in "kinto.sh" in your application overview search bar or run this following command.
