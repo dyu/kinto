@@ -51,7 +51,7 @@ git clone https://github.com/rbreaves/kinto.git
 cd kinto
 sudo apt update
 sudo apt install python3
-./setup.py
+PIP3_OPTS=--user ./setup.py
 ```
 
 **Troubleshoot**

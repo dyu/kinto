@@ -8,6 +8,8 @@ distro=$(awk -F= '$1=="NAME" { gsub("[\",!,_, ]","",$2);print $2 ;}' /etc/os-rel
 typeset -l dename
 dename=$(./linux/system-config/dename.sh | cut -d " " -f1)
 
+[ -z "$PIP3_OPTS" ] && PIP3_OPTS=''
+
 function uninstall {
 
 	echo -e "\nNote: Restoring keys is only relevant if you had installed a version prior to 1.2 of Kinto. You should skip this step if 1.2+ is all you have installed."
@@ -371,10 +373,10 @@ if ! [ -x "$(command -v xhost)" ] || ! [ -x "$(command -v gcc)" ]; then
 	fi
 fi
 if [ "$distro" == 'linuxmint' ]; then
-	pip3 install setuptools
+	pip3 install $PIP3_OPTS setuptools
 fi
 
-pip3 install pillow
+pip3 install $PIP3_OPTS pillow
 
 # echo "Transferring files..."
 mkdir -p ~/.config/kinto
@@ -512,13 +514,13 @@ if ! [[ $1 == "5" || $1 == "uninstall" || $1 == "Uninstall" ]]; then
 		cd xkeysnail
 		git checkout kinto
 	fi
-	sudo pip3 install --upgrade .
+	sudo pip3 install $PIP3_OPTS --upgrade .
 	cd ..
 	which xkeysnail
 	if [ $? -eq 1 ]; then
 		echo -e "\nKinto install has \e[1m\033[0;91mfailed\e[0m.\n"
 		echo -e "cd into ./xkeysnail"
-		echo -e "Run 'sudo pip3 install --upgrade .' to debug issue"
+		echo -e "Run 'sudo pip3 install $PIP3_OPTS --upgrade .' to debug issue"
 		exit 0
 	fi
 	sed -i "s#{xkeysnail}#`which xkeysnail`#g" ./linux/xkeysnail.service.new
