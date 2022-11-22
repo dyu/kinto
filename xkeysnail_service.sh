@@ -376,7 +376,7 @@ if [ "$distro" == 'linuxmint' ]; then
 	pip3 install $PIP3_OPTS setuptools
 fi
 
-pip3 install $PIP3_OPTS pillow
+pip3 install $PIP3_OPTS pillow==4.3.0
 
 # echo "Transferring files..."
 mkdir -p ~/.config/kinto
